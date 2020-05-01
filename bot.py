@@ -19,7 +19,7 @@ async def bang(ctx):
 
 @bot.command()
 async def rules(ctx):
-    with open("C:\\Users\\Simrat's PC\\Documents\\My Stuff\\Mafeea\\rules.txt") as f:
+    with open(config.rules) as f:
         await ctx.send(f.read())
 
 @bot.command()
@@ -37,6 +37,7 @@ async def _8ball(ctx, *, ques):
             "As I see it, yes.",
             "Most likely.",
             "Outlook good.",
+            "Omaewa Mou Shinderu.",
             "Yes.",
             "Signs point to yes.",
             "Reply hazy, try again.",
@@ -49,7 +50,6 @@ async def _8ball(ctx, *, ques):
             "My sources say no.",
             "Outlook not so good.",
             "Very doubtful.",
-            "Omaewa Mou Shinderu.",
             "Yare Yare Daze"]
 
     await ctx.send(f'Question: {ques}\n Answer: {random.choice(responses)}')
